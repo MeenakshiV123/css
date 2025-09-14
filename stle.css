@@ -1,0 +1,19 @@
+h1{
+    color: blue !important;
+}
+.number,#link{
+    color: blueviolet ;
+}
+h3{
+    color: rgb(17, 161, 218);
+    background-color: pink;
+}
+#paragraph{
+    color:chocolate;
+}
+.skills{
+    color: crimson;
+}
+*{
+    background-color: darkturquoise;
+}
