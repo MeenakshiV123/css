@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iStudio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #e9f0ef;
+  color: #102a27;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 80px;
+  border-bottom: 1px solid #d3e0dd;
+  background-color: #e9f0ef;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 600;
+  color: #102a27;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #102a27;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #1a7d74;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px;
+  min-height: 80vh;
+}
+
+.hero-content {
+  max-width: 50%;
+}
+
+.hero-content h1 {
+  font-size: 72px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.hero-content h1 span {
+  color: #1a7d74;
+}
+
+.hero-content p {
+  margin-top: 30px;
+  padding: 15px 25px;
+  border: 2px solid #d3e0dd;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
+/* Hero Image */
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  height: 250px;
+  width: 500px;
+  border-radius: 4px;
+  position: relative;
+  z-index: 2;
+}
+
+.image-border {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 280px;
+  height: 320px;
+  background-color: #0b615a;
+  z-index: 1;
+  border-radius: 4px;
+}
+.features {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 80px 100px;
+  background-color: #e9f0ef;
+  flex-wrap: wrap;
+}
+
+.feature-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 20px;
+}
+
+.icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e9f0ef;
+  border: 2px solid white;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px #d3e0dd;
+}
+
+.icon i {
+  color: #0b615a;
+  font-size: 20px;
+}
+
+.feature-box h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #0b1f1d;
+}
+.history {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  padding: 80px 100px;
+  background-color: #f8fafa;
+}
+
+.history-images {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.history-images img {
+  width: 300px;
+  border-radius: 3px;
+}
+
+.image-overlay {
+  position: relative;
+}
+
+.image-overlay img {
+  width: 300px;
+  height: 380px;
+  border-radius: 3px;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #0b615a;
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  font-size: 18px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.history-content {
+  max-width: 600px;
+}
+
+.history-content h2 {
+  font-size: 36px;
+  margin-bottom: 25px;
+  color: #0b1f1d;
+}
+
+.history-content .highlight {
+  background-color: #d3e0dd;
+  color: #0b615a;
+  padding: 3px 8px;
+}
+
+.history-content p {
+  font-size: 17px;
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.history-points {
+  display: flex;
+  gap: 60px;
+  margin: 25px 0;
+}
+
+.history-points ul {
+  list-style: none;
+  padding: 0;
+}
+
+.history-points li {
+  margin-bottom: 10px;
+  font-size: 17px;
+  color: #0b1f1d;
+}
+
+.history-points i {
+  color: #0b615a;
+  margin-right: 8px;
+}
+
+/* Buttons and Socials */
+.history-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn {
+  background-color: #0b615a;
+  color: white;
+  padding: 10px 25px;
+  text-decoration: none;
+  border-radius: 2px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #094c47;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border: 2px solid #0b615a;
+  color: #0b615a;
+  text-align: center;
+  line-height: 33px;
+  margin-right: 10px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #0b615a;
+  color: white;
+}
+/* Section styling */
+.why-choose-us {
+  text-align: center;
+  padding: 80px 0;
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.why-choose-us h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 60px;
+}
+
+.why-choose-us h2 span {
+  background-color: #e5f2ef;
+  color: #0f5959;
+  padding: 5px 10px;
+}
+
+.choose-grid {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.choose-box {
+  width: 300px;
+}
+
+.choose-box i {
+  font-size: 60px;
+  color: #0f5959;
+  margin-bottom: 20px;
+}
+
+.choose-box h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.choose-box p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .choose-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.latest-projects {
+  padding: 80px 50px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.projects-info {
+  background-color: #0f5959;
+  color: #fff;
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.projects-info h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.projects-info h2 span {
+  background-color: #e5f2ef;
+  color: #0f5959;
+  padding: 4px 8px;
+}
+
+.projects-info h1 {
+  font-size: 80px;
+  margin: 0;
+}
+
+.projects-info p {
+  font-size: 1.2rem;
+}
+
+/* Gallery Grid */
+.projects-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 250px);
+}
+
+.project-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-box:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay on images */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  color: #fff;
+  transition: 0.3s;
+}
+
+.overlay h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.overlay p {
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.services-section {
+  padding: 80px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.services-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 50px;
+  align-items: start;
+}
+
+/* Left text side */
+.services-text h2 {
+  font-size: 2.5rem;
+  color: #083838;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.services-text h2 span {
+  background-color: #e5f2ef;
+  color: #0f5959;
+  padding: 5px 10px;
+}
+
+.services-text p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.contact-box {
+  display: flex;
+  align-items: center;
+  background-color: #e5efef; /* light background */
+  width: fit-content;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  background-color: #126d6d; /* teal color */
+  color: white;
+  padding: 30px 40px;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info {
+  padding: 20px 30px;
+}
+
+.info h3 {
+  margin: 0;
+  font-size: 28px;
+  color: #013131;
+}
+
+.info p {
+  margin: 8px 0 0;
+  font-size: 18px;
+  color: #555;
+}
+
+
+/* Right grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.service-card {
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.service-card img {
+  width: 100%;
+  margin: 15px 0;
+  border-radius: 4px;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Colors */
+.service-card.green {
+  background-color: #0f5959;
+  color: white;
+}
+
+.service-card.light {
+  background-color: #eaf3f2;
+  color: #0f5959;
+}
+
+/* Hover Effect */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .services-content {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #e8f1f0;
+  margin: 0;
+  padding: 0;
+}
+
+.team-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.team-section h2 {
+  font-size: 36px;
+  color: #222;
+  margin-bottom: 50px;
+}
+
+.team-section h2 span {
+  color: #0a6b6b;
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.team-member {
+  position: relative;
+  width: 280px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.team-member img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.team-member:hover img {
+  transform: scale(1.05);
+  filter: brightness(70%);
+}
+
+.member-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  text-align: left;
+}
+
+.role {
+  display: inline-block;
+  background-color: #0a6b6b;
+  padding: 5px 12px;
+  font-size: 14px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.member-info h3 {
+  margin: 5px 0;
+  font-size: 22px;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: white;
+  border: 1px solid #0a6b6b;
+  padding: 6px 8px;
+  margin-right: 8px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #0a6b6b;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #fff;
+  color: #1d1d1d;
+}
+
+.testimonial {
+  padding: 80px 10%;
+}
+
+.testimonial-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* ---------- IMAGE STYLING ---------- */
+.testimonial-image {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  flex-shrink: 0;
+}
+
+.testimonial-image .image-bg {
+  background-color: #0a6b6b;
+  width: 60%;
+  height: 90%;
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.testimonial-image img {
+  position: relative;
+  z-index: 2;
+  width: 80%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* ---------- CONTENT STYLING ---------- */
+.testimonial-content {
+  max-width: 500px;
+}
+
+.testimonial-content h2 {
+  font-size: 32px;
+  color: #0f2929;
+  margin-bottom: 15px;
+}
+
+.testimonial-content p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author .line {
+  width: 40px;
+  height: 3px;
+  background-color: #0a6b6b;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.author h4 {
+  font-size: 20px;
+  color: #0f2929;
+  margin: 0;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 1024px) {
+  .testimonial-container {
+    gap: 40px;
+  }
+
+  .testimonial-content h2 {
+    font-size: 28px;
+  }
+
+  .testimonial-content p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .testimonial-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  .testimonial-image .image-bg {
+    top: 15px;
+    left: -15px;
+  }
+
+  .testimonial-content {
+    max-width: 100%;
+  }
+
+  .author {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial {
+    padding: 60px 5%;
+  }
+
+  .testimonial-content h2 {
+    font-size: 24px;
+  }
+
+  .testimonial-content p {
+    font-size: 14px;
+  }
+
+  .testimonial-image {
+    width: 250px;
+    height: 250px;
+  }
+}
+/* General Reset */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #fff;
+  color: #1d1d1d;
+}
+
+/* Newsletter Section */
+.newsletter {
+  background-color: #e9f1ef;
+  padding: 70px 5%;
+}
+
+.newsletter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* Left Image */
+.newsletter-image {
+  flex: 1 1 400px;
+}
+
+.newsletter-image img {
+  width: 100%;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+/* Right Content */
+.newsletter-content {
+  flex: 1 1 400px;
+  max-width: 500px;
+}
+
+.newsletter-content h2 {
+  font-size: 36px;
+  color: #0f2929;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.newsletter-content h2 span {
+  background-color: #fff;
+  padding: 0 10px;
+  color: #0a6b6b;
+}
+
+.newsletter-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.newsletter-form input {
+  width: 100%;
+  padding: 15px 60px 15px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+}
+
+.newsletter-form button {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #0a6b6b;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.newsletter-content p {
+  font-size: 15px;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .newsletter-container {
+    gap: 40px;
+  }
+
+  .newsletter-content h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .newsletter-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .newsletter-content h2 span {
+    display: inline-block;
+  }
+
+  .newsletter-form {
+    justify-content: center;
+  }
+
+  .newsletter-form input {
+    width: 90%;
+  }
+
+  .newsletter-form button {
+    right: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsletter {
+    padding: 60px 5%;
+  }
+
+  .newsletter-content h2 {
+    font-size: 24px;
+  }
+
+  .newsletter-form input {
+    font-size: 14px;
+    padding: 12px 50px 12px 15px;
+  }
+
+  .newsletter-form button {
+    font-size: 18px;
+  }
+}
+.site-footer{
+  background:#111;
+  color:#fff;
+  padding:36px 10px 18px
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:18px
+}
+.site-footer h4{
+  margin-top:0
+}
+.footer-links{
+  list-style:none;
+  padding:0;
+  margin:0
+}
+.footer-links li{
+  margin:6px 0
+}
+.footer-links a{
+  color:#ddd;
+  text-decoration:none
+}
+.footer-links a:hover{
+  color:#fff
+}
+
+.copyright{
+  padding:18px;
+  text-align:center;
+  color:#aaa;
+  font-size:0.9rem;
+}
+
+
+
+  </style>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">iSTUDIO</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Projects</a></li>
+        <li class="dropdown">
+          <a href="#">Pages ▾</a>
+        </li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>We Make Your <br><span>Home</span> Better</h1>
+      <p>An Award Winning Studio Since 1990</p>
+    </div>
+
+    <div class="hero-image">
+      <div class="image-border"></div>
+      <img src="https://themewagon.github.io/iStudio/img/hero-slider-1.jpg" alt="Home Interior">
+    </div>
+  </section>
+
+    <!-- Features Section -->
+<section class="features">
+  <div class="feature-box">
+    <div class="icon"><i class="fa-solid fa-couch"></i></div>
+    <h3>Crafted Furniture</h3>
+  </div>
+
+  <div class="feature-box">
+    <div class="icon"><i class="fa-solid fa-leaf"></i></div>
+    <h3>Sustainable Material</h3>
+  </div>
+
+  <div class="feature-box">
+    <div class="icon"><i class="fa-solid fa-lightbulb"></i></div>
+    <h3>Innovative Architects</h3>
+  </div>
+
+  <div class="feature-box">
+    <div class="icon"><i class="fa-solid fa-wallet"></i></div>
+    <h3>Budget Friendly</h3>
+  </div>
+</section>
+<!-- History Section -->
+<section class="history">
+  <div class="history-images">
+    <img src="https://themewagon.github.io/iStudio/img/about-1.jpg" alt="Kitchen Design">
+    <div class="image-overlay">
+      <img src="https://themewagon.github.io/iStudio/img/about-2.jpg" alt="Interior Design">
+      <div class="overlay-text">Award Winning Studio Since 1990</div>
+    </div>
+  </div>
+
+  <div class="history-content">
+    <h2><span class="highlight">HISTORY</span> of Our Creation</h2>
+    <p>
+      Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. 
+      Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, 
+      sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod 
+      magna dolore erat amet.
+    </p>
+    <p>
+      Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, 
+      sed stet no labore lorem sit. Sanctus clita duo justo et tempor.
+    </p>
+
+    <div class="history-points">
+      <ul>
+        <li><i class="fa-solid fa-check"></i> Award Winning</li>
+        <li><i class="fa-solid fa-check"></i> Professional Staff</li>
+      </ul>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> 24/7 Support</li>
+        <li><i class="fa-solid fa-check"></i> Fair Prices</li>
+      </ul>
+    </div>
+
+    <div class="history-buttons">
+      <a href="#" class="btn">Read More</a>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-choose-us">
+  <div class="container">
+    <h2>Why People <span>CHOOSE US</span></h2>
+    <div class="choose-grid">
+      <div class="choose-box">
+        <i class="fa fa-calendar"></i>
+        <h3>25+ Years Experience</h3>
+        <p>Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet.</p>
+      </div>
+
+      <div class="choose-box">
+        <i class="fa fa-list-check"></i>
+        <h3>Best Interior Design</h3>
+        <p>Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet.</p>
+      </div>
+
+      <div class="choose-box">
+        <i class="fa fa-pencil-ruler"></i>
+        <h3>Innovative Architects</h3>
+        <p>Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet.</p>
+      </div>
+
+      <div class="choose-grid">
+      <div class="choose-box">
+        <i class="fa fa-calendar"></i>
+        <h3>Customer Satisfaction</h3>
+        <p>Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet.</p>
+      </div>
+
+      <div class="choose-grid">
+      <div class="choose-box">
+        <i class="fa fa-list-check"></i>
+        <h3>Budget Friendly</h3>
+        <p>Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet.</p>
+      </div>
+
+      <div class="choose-grid">
+      <div class="choose-box">
+        <i class="fa fa-pencil-ruler"></i>
+        <h3>Sustainable Material</h3>
+        <p>Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="latest-projects">
+  <div class="container">
+    <div class="projects-grid">
+      <!-- Left Side -->
+      <div class="projects-info">
+        <h2>Our Latest <span>PROJECTS</span></h2>
+        <h1>6</h1>
+        <p>of our latest projects</p>
+      </div>
+
+      <!-- Right Side -->
+      <div class="projects-gallery">
+        <div class="project-box">
+          <img src="https://themewagon.github.io/iStudio/img/project-1.jpg" alt="Kitchen">
+          <div class="overlay">
+            <h3>Kitchen</h3>
+            <p>72 Projects</p>
+          </div>
+        </div>
+
+        <div class="project-box">
+          <img src="https://themewagon.github.io/iStudio/img/project-2.jpg" alt="Bathroom">
+          <div class="overlay">
+            <h3>Bathroom</h3>
+            <p>67 Projects</p>
+          </div>
+        </div>
+
+        <div class="project-box">
+          <img src="https://themewagon.github.io/iStudio/img/project-3.jpg" alt="Bedroom">
+          <div class="overlay">
+            <h3>Bedroom</h3>
+            <p>53 Projects</p>
+          </div>
+        </div>
+
+        <div class="project-box">
+          <img src="https://themewagon.github.io/iStudio/img/project-4.jpg" alt="Living Room">
+          <div class="overlay">
+            <h3>Living Room</h3>
+            <p>33 Projects</p>
+          </div>
+        </div>
+
+        <div class="project-box">
+          <img src="https://themewagon.github.io/iStudio/img/project-5.jpg" alt="Furniture">
+          <div class="overlay">
+            <h3>Furniture</h3>
+            <p>87 Projects</p>
+          </div>
+        </div>
+
+        <div class="project-box">
+          <img src="https://themewagon.github.io/iStudio/img/project-6.jpg" alt="Rennovation">
+          <div class="overlay">
+            <h3>Rennovation</h3>
+            <p>69 Projects</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="services-section">
+  <div class="container">
+    <div class="services-content">
+      <!-- Left Side -->
+      <div class="services-text">
+        <h2>Our Creative <span>SERVICES</span></h2>
+        <p>
+          Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit,
+          sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod
+          magna dolore erat amet.
+        </p>
+        <p>
+          Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit.
+          Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit,
+          sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod
+          magna dolore erat amet.
+        </p>
+        <div class="contact-box">
+  <div class="icon">
+    <i class="fas fa-phone"></i>
+  </div>
+  <div class="info">
+    <h3>+0123456789</h3>
+    <p>Call us direct 24/7 for get a free consultation</p>
+  </div>
+</div>
+
+      </div>
+
+      <!-- Right Side -->
+      <div class="services-grid">
+        <div class="service-card green">
+          <h3>Interior Design</h3>
+          <img src="https://themewagon.github.io/iStudio/img/service-1.jpg" alt="Interior Design">
+          <p>
+            Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed
+            diam stet diam sed stet lorem.
+          </p>
+        </div>
+
+        <div class="service-card light">
+          <h3>Implement</h3>
+          <img src="https://themewagon.github.io/iStudio/img/service-2.jpg" alt="Implement">
+          <p>
+            Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed
+            diam stet diam sed stet lorem.
+          </p>
+        </div>
+
+        <div class="service-card light">
+          <h3>Renovation</h3>
+          <img src="https://themewagon.github.io/iStudio/img/service-3.jpg" alt="Renovation">
+          <p>
+            Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed
+            diam stet diam sed stet lorem.
+          </p>
+        </div>
+
+        <div class="service-card green">
+          <h3>Commercial</h3>
+          <img src="https://themewagon.github.io/iStudio/img/service-4.jpg" alt="Commercial">
+          <p>
+            Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed
+            diam stet diam sed stet lorem.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="team-section">
+  <h2>Our Professional <span>DESIGNERS</span></h2>
+  
+  <div class="team-container">
+    <div class="team-member">
+      <img src="https://themewagon.github.io/iStudio/img/team-1.jpg" alt="Designer 1">
+      <div class="member-info">
+        <span class="role">Architect</span>
+        <h3>Boris Johnson</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-member">
+      <img src="https://themewagon.github.io/iStudio/img/team-2.jpg" alt="Designer 2">
+      <div class="member-info">
+        <span class="role">Architect</span>
+        <h3>Donald Pakura</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-member">
+      <img src="https://themewagon.github.io/iStudio/img/team-3.jpg" alt="Designer 3">
+      <div class="member-info">
+        <span class="role">Architect</span>
+        <h3>Bradley Gordon</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-member">
+      <img src="https://themewagon.github.io/iStudio/img/team-4.jpg" alt="Designer 4">
+      <div class="member-info">
+        <span class="role">Architect</span>
+        <h3>Alexander Bell</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial">
+  <div class="testimonial-container">
+    <div class="testimonial-image">
+      <div class="image-bg"></div>
+      <img src="https://themewagon.github.io/iStudio/img/testimonial-2.jpg" alt="Bradley Gordon">
+    </div>
+
+    <div class="testimonial-content">
+      <h2>Budget Friendly</h2>
+      <p>
+        Diam amet diam et eos labore. Clita erat ipsum et lorem et sit,
+        sed stet no labore lorem sit. Sanctus clita duo justo et tempor
+        eirmod magna dolore erat amet.
+      </p>
+
+      <div class="author">
+        <span class="line"></span>
+        <h4>Bradley Gordon</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="newsletter-container">
+    <!-- Left Image -->
+    <div class="newsletter-image">
+      <img src="https://themewagon.github.io/iStudio/img/newsletter.jpg" alt="Newsletter">
+    </div>
+
+    <!-- Right Content -->
+    <div class="newsletter-content">
+      <h2>
+        Subscribe the <span>NEWSLETTER</span>
+      </h2>
+
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter Your Email" required>
+        <button type="submit">
+          <i class="fa fa-paper-plane"></i>
+        </button>
+      </form>
+
+      <p>Diam sed sed dolor stet amet eirmod</p>
+    </div>
+  </div>
+</section>
+
+<footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Get In Touch</h4>
+        <p>123 Street, New York, USA</p>
+        <p>+012 345 67890</p>
+        <p>info@example.com</p>
+      </div>
+      <div>
+        <h4>Popular Link</h4>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Career</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="#">Interior Design</a></li>
+          <li><a href="#">Project Planning</a></li>
+          <li><a href="#">Renovation</a></li>
+          <li><a href="#">Landscape Design</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © Your Site Name, All Right Reserved. Designed By HTML Codex. Distributed by ThemeWagon.
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+  
+</body>
+</html>
