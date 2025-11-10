@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aqua;
+        }
+        .combinators>h1,h1+p{
+            color: blue;
+            background-color: brown;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        h1{
+            text-align: center;
+        }
+        .types h2{
+            color:blueviolet;
+        }
+        #name~p{
+            color:cadetblue;
+        }
+        .greet >h4{
+            background-color: chocolate;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="combinators">
+        <h1>Combinator Selectors</h1>
+        <p>there are four types of cominator selectors<p>
+        <div class="types">
+            <h2>child selector</h2>
+            <h2>descendent child</h2>
+            <h2>adjacent sibling child</h2>
+            <h2>general sibling selector</h2>
+        </div>
+        <div class="greet">
+            <h4>Hello</h4>
+        </div>
+    <div id="name">
+        <p>Meenakshi Vanguri</p>
+    </div>
+    </div>
+</body>
+</html>

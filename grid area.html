@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        .parent{
+            display: grid;
+            gap: 10px;
+            height: 80vh;
+            width: 100%;
+            font-size: 2em;
+            grid-template-rows: repeat(3,250px);
+            grid-template-areas: 
+            'nature1 nature2 nature3 nature4'
+            'nature5 nature6 nature3 nature7'
+            'nature8 nature6 nature9 nature7';
+
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        .parent>.nature1{
+            grid-area: nature1;
+        }
+        .parent>.nature2{
+            grid-area: nature2;
+        }
+        .parent>.nature3{
+            grid-area: nature3;
+        }
+        .parent>.nature4{
+            grid-area: nature4;
+        }
+        .parent>.nature5{
+            grid-area: nature5;
+        }
+        .parent>.nature6{
+            grid-area: nature6;
+        }
+        .parent>.nature7{
+            grid-area: nature7;
+        }
+        .parent>.nature8{
+            grid-area: nature8;
+        }
+        .parent>.nature9{
+            grid-area: nature9;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZSS0Iv5z_vlEtxEbVcc2M5pijthz-FZPl9g&s" alt="" class="nature1">
+          
+            <img src="https://st2.depositphotos.com/2001755/5408/i/950/depositphotos_54081917-stock-photo-beautiful-nature-landscape.jpg" alt="" class="nature2">
+           
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXlwKPv0B2C4T1OZ7T_W-7q4DDok1iGP1SVg&s" alt="" class="nature3">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZnVCsr25BoqA6PHPP51EcmBGImAuxZfbjJQ&s" alt="" class="nature4">
+          
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUeel4SasODybAH1XQO2hJztxn5sFAw9lX0g&s" alt="" class="nature5">
+        
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAOKGPZPFBHM9G5V_nOjB60eyEiPzgYl015g&s" alt="" class="nature6">
+            
+            <img src="https://i.pinimg.com/736x/88/e0/42/88e0426629eb29b7bdb44ab71ba0b625.jpg" alt="" class="nature7">
+
+            <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/fall-is-coming-beautiful-autumn-nature-in-the-mountains-free-image.jpeg?w=600&quality=80" alt="" class="nature8">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_q43zase--Uy4kOJR8Tx5nIVbA0g1jpI2mg&s" alt="" class="nature9">
+    </div>
+</body>
+</html>

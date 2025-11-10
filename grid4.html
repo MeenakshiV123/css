@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            display: grid;
+            height: 100vh;
+            background-color: black;
+            gap: 10px;
+            grid-template-columns: repeat(3,1fr);
+
+        }
+        .child1{
+            background-color: orange;
+            grid-column: 1/3;
+            grid-row: 1;
+        }
+        .child2{
+            background-color: orangered;
+            grid-column: 3/4;
+            grid-row: 1;
+        }
+        .child3{
+            background-color: aquamarine;
+            grid-row: 2;
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+        .child4{
+            background-color: lightseagreen;
+            grid-column: 2/4;
+        }
+        .child5{
+            background-color: brown;
+            grid-column: 1/4;
+            grid-row-start: 3;
+            grid-row-end: 3;
+        }
+        @media screen and (min-width:320px) and (max-width:426px){
+            .parent{
+            display: grid;
+            height: 100vh;
+            background-color: black;
+            gap: 10px;
+            grid-template-columns: repeat(1,1fr);
+
+        }
+        .child1{
+            background-color: orange;
+            grid-column: 1/2;
+            grid-row-start: 1;
+        }
+        .child2{
+            background-color: orangered;
+            grid-column: 1/2;
+            grid-row-start: 2;
+        }
+        .child3{
+            background-color: aquamarine;
+            grid-row: 3;
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+        .child4{
+            background-color: lightseagreen;
+            grid-column: 1/2;
+            grid-row: 4;
+        }
+        .child5{
+            background-color: brown;
+            grid-column: 1/2;
+            grid-row-start: 5;
+            grid-row-end: 5;
+        }
+            
+        }
+        @media screen and (min-width:426px) and (max-width:769px){
+            .parent{
+            display: grid;
+            height: 100vh;
+            background-color: black;
+            gap: 10px;
+            grid-template-areas: 
+            'child1 child2'
+            'child3 child3'
+            'child4 child5';
+
+        }
+        .child1{
+            background-color: orange;
+            grid-area: child1;
+        }
+        .child2{
+            background-color: orangered;
+            grid-area: child2;
+        }
+        .child3{
+            background-color: aquamarine;
+            grid-area: child3;
+        }
+        .child4{
+            background-color: lightseagreen;
+            grid-area: child4;
+        }
+        .child5{
+            background-color: brown;
+            grid-area: child5;
+            
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child1"></div>
+        <div class="child2"></div>
+        <div class="child3"></div>
+        <div class="child4"></div>
+        <div class="child5"></div>
+    </div>
+</body>
+</html>

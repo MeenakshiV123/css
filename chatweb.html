@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Food Blog Template</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    a {
+      color: #444;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* Header / Navigation */
+    header {
+      background: #f4f4f4;
+      padding: 20px 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    nav .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav .menu a {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    /* Hero / Banner Image + Title */
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .hero .hero-text {
+      position: absolute;
+      bottom: 20px;
+      left: 30px;
+      background: rgba(255,255,255,0.8);
+      padding: 10px 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Blog posts grid */
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .post {
+      border: 1px solid #ddd;
+      overflow: hidden;
+      background: white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .post img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .post-content {
+      padding: 15px;
+      flex: 1;
+    }
+
+    .post-content h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .post-content p {
+      color: #666;
+      font-size: 16px;
+    }
+
+    /* About Me section */
+    .about {
+      margin-top: 50px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .about img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .about .about-text {
+      flex: 1;
+    }
+
+    .about .about-text h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: #f4f4f4;
+      padding: 30px 20px;
+      margin-top: 50px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* Tags / Sidebar (optional) */
+    .sidebar {
+      margin-top: 30px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tags a {
+      background: #ddd;
+      padding: 5px 10px;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+
+    /* Pagination */
+    .pagination {
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .pagination a {
+      margin: 0 5px;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      color: #333;
+    }
+
+    .pagination a.current {
+      background: #333;
+      color: white;
+      border-color: #333;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      .about {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about img {
+        margin-bottom: 20px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo"><a href="#">My Food</a></div>
+        <div class="menu">
+          <a href="#">Food</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <img src="hero-image.jpg" alt="Delicious Food">
+    <div class="hero-text">The Perfect Sandwich, A Real NYC Classic</div>
+  </div>
+
+  <div class="container">
+    <div class="posts">
+      <div class="post">
+        <img src="sandwich.jpg" alt="Sandwich">
+        <div class="post-content">
+          <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+          <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="steak.jpg" alt="Steak">
+        <div class="post-content">
+          <h3>Let Me Tell You About This Steak</h3>
+          <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="cherries.jpg" alt="Cherries">
+        <div class="post-content">
+          <h3>Cherries, Interrupted</h3>
+          <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="pasta-wine.jpg" alt="Pasta & Wine">
+        <div class="post-content">
+          <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
+          <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+      </div>
+
+      <!-- More posts… -->
+    </div>
+
+    <div class="pagination">
+      <a href="#">&laquo;</a>
+      <a href="#" class="current">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">&raquo;</a>
+    </div>
+
+    <div class="about">
+      <img src="me.jpg" alt="About Me">
+      <div class="about-text">
+        <h3>About Me, The Food Man</h3>
+        <p>With Passion For Real, Good Food … I want to share my world with you.…</p>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <h3>Popular Tags</h3>
+      <div class="tags">
+        <a href="#">Travel</a>
+        <a href="#">New York</a>
+        <a href="#">Dinner</a>
+        <a href="#">Salmon</a>
+        <a href="#">France</a>
+        <a href="#">Drinks</a>
+        <a href="#">Ideas</a>
+        <a href="#">Flavors</a>
+        <a href="#">Cuisine</a>
+        <a href="#">Chicken</a>
+        <a href="#">Dressing</a>
+        <a href="#">Fried Fish</a>
+        <a href="#">Duck</a>
+      </div>
+    </div>
+
+  </div> <!-- container end -->
+
+  <footer>
+    <div class="container">
+      <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <p>Powered by W3.CSS</p>
+    </div>
+  </footer>
+
+</body>
+</html>
